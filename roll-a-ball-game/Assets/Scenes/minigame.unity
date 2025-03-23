@@ -5232,7 +5232,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1265482914}
-  - component: {fileID: 1265482913}
+  - component: {fileID: 1265482915}
   m_Layer: 0
   m_Name: LeaderBoardManager
   m_TagString: Untagged
@@ -5240,18 +5240,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1265482913
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1265482912}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a65689247ae852f4ca0ae6633093ddbe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1265482914
 Transform:
   m_ObjectHideFlags: 0
@@ -5267,6 +5255,30 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1265482915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1265482912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a65689247ae852f4ca0ae6633093ddbe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  names:
+  - {fileID: 200022465}
+  - {fileID: 1132720458}
+  - {fileID: 1216173180}
+  - {fileID: 1453476123}
+  - {fileID: 580736850}
+  scores:
+  - {fileID: 137551459}
+  - {fileID: 1543838173}
+  - {fileID: 586908769}
+  - {fileID: 223027947}
+  - {fileID: 685741959}
 --- !u!4 &1305551632 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4635718486374669640, guid: 6472c8a06429ed34e8b6c600e24954ef, type: 3}

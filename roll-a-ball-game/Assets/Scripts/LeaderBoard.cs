@@ -14,22 +14,22 @@ public class LeaderBoard : MonoBehaviour
     private string publicLeaderboardKey = "6c48823694a7df41c347b4d932e95435ef21a7556a6679bf39909402f0e2f941";
 
 
-    public void GetLeaderBoard()
+    public void GetLeaderboard()
     {
-        LeaderBoardCreator.GetLeaderBoard(publicLeaderboardKey, ((msg) => {
-            for (int i  = 0l i< names.Count; i++)
+        LeaderboardCreator.GetLeaderboard(publicLeaderboardKey, ((msg) => {
+            for (int i  = 0 ; i< names.Count; i++)
             {
                 names[i].text = msg[i].Username;
-                scores[i].text = msg[i].score.ToString();
+                scores[i].text = msg[i].Score.ToString();
             }
         }));
     }
 
-    public void SetLeaderBoardEntry (string username, int score)
+    public void SetLeaderboardEntry (string username, int score)
     {
-        LeaderBoardCreator.UploadNewEntry(publicLeaderboardKey, username, score, ((msg) => {
+        LeaderboardCreator.UploadNewEntry(publicLeaderboardKey, username, score, ((msg) => {
             username.Substring(0,8);
-            GetLeaderBoard();
+            GetLeaderboard();
         }));
     }
    
