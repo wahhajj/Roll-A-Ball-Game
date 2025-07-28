@@ -17,9 +17,11 @@ public class PlayerController : MonoBehaviour
     public GameObject winTextObject;
     public GameObject RestartButton;
     public GameObject MainMenuButton;
+    public GameObject LeaderBoard;
 
     public bool isGamePaused = true; // Track whether the game is paused
     public static bool isGameEnded = false;
+
     private void Awake()
     {
         instance = this;
@@ -34,6 +36,7 @@ public class PlayerController : MonoBehaviour
         RestartButton.SetActive(false);
         MainMenuButton.SetActive(false);
         isGameEnded = false;
+        LeaderBoard.SetActive(false);
         // Start the countdown coroutine
         StartCoroutine(CountdownStart());
     }
@@ -77,8 +80,11 @@ public class PlayerController : MonoBehaviour
             RestartButton.gameObject.SetActive(true);
             MainMenuButton.gameObject.SetActive(true);
             isGameEnded = true;
+            LeaderBoard.SetActive(true);
             CountDownController.isGameStarted = false;
             Destroy(GameObject.FindGameObjectWithTag("Enemy"));
+     
+
         }
     }
 

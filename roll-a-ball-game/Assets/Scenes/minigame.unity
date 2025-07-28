@@ -1117,7 +1117,7 @@ GameObject:
   - component: {fileID: 319529238}
   - component: {fileID: 319529237}
   m_Layer: 0
-  m_Name: Text (TMP)
+  m_Name: Score
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1162,7 +1162,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Time Taken: '
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1920,6 +1920,7 @@ GameObject:
   - component: {fileID: 483998617}
   - component: {fileID: 483998616}
   - component: {fileID: 483998615}
+  - component: {fileID: 483998618}
   m_Layer: 0
   m_Name: Button
   m_TagString: Untagged
@@ -1990,7 +1991,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 483998616}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 483998618}
+        m_TargetAssemblyTypeName: ScoreManager, Assembly-CSharp
+        m_MethodName: Submitscore
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &483998616
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2029,6 +2042,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 483998613}
   m_CullTransparentMesh: 1
+--- !u!114 &483998618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 483998613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a731b8675d157ba4ea47c35775945cf3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputscore: {fileID: 319529237}
+  inputName: {fileID: 709527876}
+  submitScoreEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1265482915}
+        m_TargetAssemblyTypeName: LeaderBoard, Assembly-CSharp
+        m_MethodName: SetLeaderboardEntry
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &496152620
 GameObject:
   m_ObjectHideFlags: 0
@@ -3244,6 +3286,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timerText: {fileID: 436570193}
   time: 0
+  scoreTime: {fileID: 319529237}
 --- !u!1001 &773072635
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4910,6 +4953,7 @@ MonoBehaviour:
   RestartButton: {fileID: 1411950478}
   MainMenuButton: {fileID: 1121718747}
   isGamePaused: 1
+  timeTakeScore: {fileID: 0}
 --- !u!114 &1139439197
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6347,7 +6391,7 @@ GameObject:
   - component: {fileID: 1555757541}
   - component: {fileID: 1555757542}
   m_Layer: 0
-  m_Name: Score
+  m_Name: Scores
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

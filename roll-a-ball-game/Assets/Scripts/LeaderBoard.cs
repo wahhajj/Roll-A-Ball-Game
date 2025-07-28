@@ -13,11 +13,15 @@ public class LeaderBoard : MonoBehaviour
 
     private string publicLeaderboardKey = "6c48823694a7df41c347b4d932e95435ef21a7556a6679bf39909402f0e2f941";
 
-
+    private void Start()
+    {
+        GetLeaderboard();
+    }
     public void GetLeaderboard()
     {
         LeaderboardCreator.GetLeaderboard(publicLeaderboardKey, ((msg) => {
-            for (int i  = 0 ; i< names.Count; i++)
+            int loopLength = (msg.Length < names.Count) ? msg.Length : names.Count;
+            for (int i = 0; i < names.Count; i++)
             {
                 names[i].text = msg[i].Username;
                 scores[i].text = msg[i].Score.ToString();
